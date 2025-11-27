@@ -1,8 +1,10 @@
 import React from 'react';
-import { Users, Activity, DollarSign, Heart } from 'lucide-react';
+import { Users, Activity, DollarSign, Heart,PawPrint } from 'lucide-react';
 import SummaryCard from '../../molecules/SummaryCard';
 import InfoBadge from '../../molecules/InfoBadge';
 import Card from '../../atoms/Card';
+import AlertCard from '../../atoms/Alert';
+import Button from '../../atoms/Button';
 
 export default function GroupOverview({ groups, onGroupClick }) {
   return (
@@ -16,7 +18,7 @@ export default function GroupOverview({ groups, onGroupClick }) {
         <SummaryCard
           title="Total Animals"
           value={groups.reduce((sum, g) => sum + g.total, 0)}
-          icon={Users}
+          icon={PawPrint}
           color="emerald"
           trend="+12 this month"
         />
@@ -41,6 +43,7 @@ export default function GroupOverview({ groups, onGroupClick }) {
           color="red"
           subtitle="Excellent condition"
         />
+       
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -81,10 +84,25 @@ export default function GroupOverview({ groups, onGroupClick }) {
               </div>
             </div>
 
-            <div className="mt-4 flex gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               <InfoBadge label="Healthy" value={group.healthy} variant="success" />
               <InfoBadge label="Pregnant" value={group.pregnant} variant="info" />
+              <InfoBadge label="Medication" value={group.medication} variant="danger" />
+              <InfoBadge label="Kids" value={group.kids} variant="kids" />
+
+
             </div>
+            <div className='mt-4'>
+              <AlertCard 
+              type="warning" 
+              message="3 overdue vaccinations" 
+            />
+            </div>
+            <div className='mt-4 flex gap-2'>
+              <Button>View group</Button>
+              <Button>add new group</Button>
+            </div>
+            
           </Card>
         ))}
       </div>
