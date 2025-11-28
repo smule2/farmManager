@@ -4,10 +4,12 @@ import Button from '../../atoms/Button';
 import AnimalForm from './AnimalForm';
 import GroupOverview from './GroupOverview';
 import GoatsDetailPage from './AnimalsDetailPage';
+import GroupFormModal from './GroupFormModal'
 
 export default function AnimalsPage() {
   const [currentView, setCurrentView] = useState('overview');
   const [showForm, setShowForm] = useState(false);
+   const [showGroupModal, setShowGroupModal] = useState(false);
 
   const groupsData = [
     {
@@ -55,9 +57,22 @@ export default function AnimalsPage() {
     alert('Animal added successfully!');
   };
 
+    const handleGroupSubmit = (data) => {
+    console.log("New group:", data);
+    setShowGroupModal(false);
+    alert("Group added successfully!");
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-7xl mx-auto">
+        {showGroupModal && (
+          <GroupFormModal
+            onClose={() => setShowGroupModal(false)}
+            onSubmit={handleGroupSubmit}
+          />
+        )}
+
         {showForm ? (
           <AnimalForm
             onSubmit={handleFormSubmit}
@@ -70,10 +85,15 @@ export default function AnimalsPage() {
                 <h1 className="text-3xl font-bold text-gray-900">Animals Management</h1>
                 <p className="text-gray-600 mt-1">Manage and monitor all farm animals</p>
               </div>
+              <Button variant="primary" onClick={() => setShowGroupModal(true)}>
+                <Plus className="w-4 h-4 mr-2" />
+                Add Group
+              </Button>
               <Button variant="primary" onClick={() => setShowForm(true)}>
                 <Plus className="w-4 h-4 mr-2" />
                 Add Animal
               </Button>
+              
             </div>
             <GroupOverview
               groups={groupsData}

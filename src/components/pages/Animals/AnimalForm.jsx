@@ -55,7 +55,7 @@ export default function AnimalForm({ onSubmit, onCancel }) {
         <p className="text-gray-600 mt-1">Fill in the details to register a new animal</p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-6 text-gray-800">
         {/* Basic Information */}
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Basic Information</h3>
