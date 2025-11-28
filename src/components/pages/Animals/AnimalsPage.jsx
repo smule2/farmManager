@@ -3,7 +3,7 @@ import { Plus } from 'lucide-react';
 import Button from '../../atoms/Button';
 import AnimalForm from './AnimalForm';
 import GroupOverview from './GroupOverview';
-import GoatsDetailPage from './GoatsDetailPage';
+import GoatsDetailPage from './AnimalsDetailPage';
 
 export default function AnimalsPage() {
   const [currentView, setCurrentView] = useState('overview');

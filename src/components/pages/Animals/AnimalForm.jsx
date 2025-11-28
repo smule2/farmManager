@@ -102,6 +102,7 @@ export default function AnimalForm({ onSubmit, onCancel }) {
               value={formData.birthDate}
               onChange={handleChange}
             />
+          
           </div>
         </div>
 
