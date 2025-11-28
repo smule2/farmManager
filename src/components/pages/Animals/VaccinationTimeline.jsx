@@ -1,5 +1,5 @@
 import React from "react";
-import StatusPill from "../atoms/StatusPill";
+import StatusPill from "../../atoms/StatusPill";
 
 export default function VaccinationTimeline() {
   const data = [
@@ -9,7 +9,7 @@ export default function VaccinationTimeline() {
   ];
 
   return (
-    <div className="bg-white p-4 rounded-xl shadow-sm">
+    <div className="bg-white p-4 rounded-xl shadow-sm ">
       <h2 className="font-semibold text-gray-800 mb-3">
         Vaccination & Treatment Timeline
       </h2>

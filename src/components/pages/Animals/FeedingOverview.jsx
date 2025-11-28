@@ -11,7 +11,7 @@ export default function FeedingOverview() {
     <div className="bg-white p-4 rounded-xl shadow-sm">
       <h2 className="font-semibold text-gray-800 mb-3">Feeding Overview</h2>
 
-      <div className="space-y-2">
+      <div className="space-y-2 text-gray-900">
         {overview.map((item) => (
           <div className="flex justify-between text-sm" key={item.label}>
             <span>{item.label}</span>

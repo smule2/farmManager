@@ -211,6 +211,9 @@ import Input from '../../atoms/Input';
 import Select from '../../atoms/Select';
 import QuickInsights from './QuickInsights';
 import FinancialSummary from './FinancialSummary';
+import VaccinationTimeline from './VaccinationTimeline';
+import FeedingOverview from './FeedingOverview';
+import TreatmentHistory from './TreatmentHistory';
 
 export default function AnimalsDetailPage({ onBack }) {
   const goatsData = {
@@ -663,13 +666,22 @@ export default function AnimalsDetailPage({ onBack }) {
           </table>
         </div>
       </Card>
-      <div className="flex-1">
-    <QuickInsights />
-    <div className='mt-2'>
-    <FinancialSummary/>
-    </div>
-  </div>
+        <div className="flex-1">
+            <QuickInsights />
+            <div className='mt-2'>
+            <FinancialSummary/>
+            </div>
+        </div>
  </div>
+        <div className='mt-4'> 
+                <TreatmentHistory/>
+        </div>
+        <div className='mt-4'> 
+                <VaccinationTimeline/>
+        </div>
+        <div className='mt-4'> 
+                <FeedingOverview/>
+        </div>
       
       {/* Modal overlay for Add Goat */}
       {isModalOpen && (

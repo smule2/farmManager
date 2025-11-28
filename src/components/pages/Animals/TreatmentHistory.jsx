@@ -1,5 +1,5 @@
 import React from "react";
-import StatusPill from "../atoms/StatusPill";
+import StatusPill from "../../atoms/StatusPill";
 
 export default function TreatmentHistory() {
   const history = [
